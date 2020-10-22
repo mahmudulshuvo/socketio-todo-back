@@ -6,7 +6,7 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
-import { uri } from './mongo-config'
+const mongoConfig = require('./mongo-config')
 
 // recreate database
 
@@ -46,8 +46,9 @@ const userModel = require('./model/UserModel')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
+console.log(mongoConfig.uri)
 // MONGOOSE CONNECT
-mongoose.connect(uri, {
+mongoose.connect(mongoConfig.uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
