@@ -44,7 +44,7 @@ app.use(bodyParser.json())
 
 // MONGOOSE CONNECT
 mongoose.connect(
-    'mongodb://heroku_tpv0f20f:123456aA@ds217452.mlab.com:17452/?authSource=admin',
+    'mongodb://heroku_tpv0f20f:m62schr036itd4h1069g894kis@ds217452.mlab.com:17452/heroku_tpv0f20f',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -159,7 +159,7 @@ app.get('/', function (req, res) {
 const port = process.env.PORT || 3001
 
 http.listen(port, function () {
-    console.log('listening on *:3001 ', port)
+    console.log('listening on *:', port)
 })
 
 // app.listen(port)
