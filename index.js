@@ -159,7 +159,7 @@ app.get('/', function (req, res) {
 const port = process.env.PORT || 3001
 
 http.listen(port, function () {
-    console.log('listening on *:3001')
+    console.log('listening on *:3001 ', port)
 })
 
 // app.listen(port)
