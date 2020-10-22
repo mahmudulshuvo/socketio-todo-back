@@ -14,9 +14,7 @@ const bodyParser = require('body-parser')
 
 // app.use(cors(corsOptions))
 
-var allowedOrigins = [
-    'https://5f912f315202e5804605d702--eloquent-goldberg-62e27d.netlify.app/',
-]
+var allowedOrigins = ['http://localhost:3000']
 app.use(
     cors({
         origin: function (origin, callback) {
