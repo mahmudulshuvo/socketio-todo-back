@@ -6,6 +6,8 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+app.use(cors())
+
 var allowedOrigins = ['http://localhost:3000']
 app.use(
     cors({
