@@ -6,6 +6,8 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+import { uri } from './mongo-config'
+
 // recreate database
 
 app.use(cors())
@@ -45,13 +47,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // MONGOOSE CONNECT
-mongoose.connect(
-    'mongodb://heroku_tpv0f20f:m62schr036itd4h1069g894kis@ds217452.mlab.com:17452/heroku_tpv0f20f',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-)
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 var db = mongoose.connection
 db.on('error', () => {
     console.log('---FAILED to connect to mongoose')
