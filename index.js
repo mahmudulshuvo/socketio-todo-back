@@ -44,7 +44,7 @@ app.use(bodyParser.json())
 
 // MONGOOSE CONNECT
 mongoose.connect(
-    'mongodb://heroku_tpv0f20f:123456aA@ds217452.mlab.com:17452/heroku_tpv0f20f?authSource=heroku_tpv0f20f&w=1',
+    'mongodb://heroku_tpv0f20f:123456aA@ds217452.mlab.com:17452/?authSource=admin',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
