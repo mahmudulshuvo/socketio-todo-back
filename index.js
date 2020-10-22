@@ -6,7 +6,13 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
-app.use(cors())
+var corsOptions = {
+    origin:
+        'https://5f912f315202e5804605d702--eloquent-goldberg-62e27d.netlify.app/',
+    optionsSuccessStatus: 200, // For legacy browser support
+}
+
+app.use(cors(corsOptions))
 
 var allowedOrigins = ['http://localhost:3000']
 app.use(
