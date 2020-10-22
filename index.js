@@ -43,10 +43,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // MONGOOSE CONNECT
-mongoose.connect('mongodb://localhost:27017/todo', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(
+    'mongodb://heroku_tpv0f20f:123456aA<dbpassword>@ds217452.mlab.com:17452/heroku_tpv0f20f',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }
+)
 var db = mongoose.connection
 db.on('error', () => {
     console.log('---FAILED to connect to mongoose')
