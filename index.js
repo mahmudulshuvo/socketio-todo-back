@@ -6,6 +6,8 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+// recreate database
+
 app.use(cors())
 
 // var corsOptions = {
