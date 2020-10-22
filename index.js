@@ -6,31 +6,32 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+app.use(cors())
+
 // var corsOptions = {
-//     origin:
-//         'https://5f912f315202e5804605d702--eloquent-goldberg-62e27d.netlify.app/',
+//     origin: 'http://localhost:8080',
 //     optionsSuccessStatus: 200, // For legacy browser support
 // }
 
-// app.use(cors(corsOptions))
+// app.use(cors())
 
-var allowedOrigins = ['http://localhost:3000']
-app.use(
-    cors({
-        origin: function (origin, callback) {
-            // allow requests with no origin
-            // (like mobile apps or curl requests)
-            if (!origin) return callback(null, true)
-            if (allowedOrigins.indexOf(origin) === -1) {
-                var msg =
-                    'The CORS policy for this site does not ' +
-                    'allow access from the specified Origin.'
-                return callback(new Error(msg), false)
-            }
-            return callback(null, true)
-        },
-    })
-)
+// var allowedOrigins = ['http://localhost:3000']
+// app.use(
+//     cors({
+//         origin: function (origin, callback) {
+//             // allow requests with no origin
+//             // (like mobile apps or curl requests)
+//             if (!origin) return callback(null, true)
+//             if (allowedOrigins.indexOf(origin) === -1) {
+//                 var msg =
+//                     'The CORS policy for this site does not ' +
+//                     'allow access from the specified Origin.'
+//                 return callback(new Error(msg), false)
+//             }
+//             return callback(null, true)
+//         },
+//     })
+// )
 
 const apiRoutes = require('./routes/routes')
 // Use Api routes in the App
@@ -152,9 +153,11 @@ app.get('/', function (req, res) {
     res.send('<h1>Hello world</h1>')
 })
 
-// http.listen(3001, function () {
-//     console.log('listening on *:3001')
-// })
-
 const port = process.env.PORT || 3001
-app.listen(port)
+
+http.listen(port, function () {
+    console.log('listening on *:3001')
+})
+
+// const port = process.env.PORT || 3001
+// app.listen(port)
